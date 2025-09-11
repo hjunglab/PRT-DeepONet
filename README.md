@@ -35,25 +35,6 @@ Each type ships with (1) a binary file storing trained parameters (.pt), (2) an 
 
 ---
 
-## Repository structure
-
-PRT-DeepONet/
-├─ README.md
-├─ params/
-│ ├─ Irreversible_Sorption.pt
-│ ├─ Reversible_Sorption.pt
-│ └─ Monod.pt
-├─ geometries/
-│ ├─ Domain_Irreversible_Sorption.npz
-│ ├─ Domain_Reversible_Sorption.npz
-│ └─ Domain_Monod.npz
-├─ models/
-│ ├─ PRT-DeepONet_Irreversible_Sorption_load.ipynb
-│ ├─ PRT-DeepONet_Reversible_Sorption_load.ipynb
-└─└─ PRT-DeepONet_Monod_load.ipynb
-
----
-
 ## Quick Start
 
 1) Clone or download the repository (keep the folder structure).
@@ -72,8 +53,10 @@ Success criterion: a predicted image is displayed.
 ---
 
 Authors:
+
 Yehoon Kim, Chungnam National University
 wnsla7323 <at> naver.com
+
 Heewon Jung, Chungnam National University
 hjung <at> cnu.ac.kr
 
