@@ -125,8 +125,8 @@ DATA_ROOT/
 
 Authors:
 
-Hyegyeong Jo, Chungnam National University — hyegyeong6321 @ naver.com
-Heewon Jung, Chungnam National University — hjung @ cnu.ac.kr
+Hyegyeong Jo, Chungnam National University — <hyegyeong6321@naver.com>  
+Heewon Jung, Chungnam National University — <hjung@cnu.ac.kr>
 
 ---
 
