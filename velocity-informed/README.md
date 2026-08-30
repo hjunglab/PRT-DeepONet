@@ -83,17 +83,6 @@ concentration: the concentration field).
 - **Trunk** ← `(x, y)`, the **GDF** (Geodesic Distance Function, inlet distance), and — for Monod —
   the normalized time `t` (integer timesteps `t = 1 … 80`).
 
----
-
-
-## Grid & conventions
-
-- Fixed grid: `nx, ny = 64, 148`
-- Flow metric: NRMSE — Concentration metric: RMSE
-- Divergence-free penalty weight: λ = 10
-- Conditions of the bundled example domain (Reynolds numbers) are precomputed; for a new geometry
-  the Reynolds number must be recomputed.
-- Monod conditions: `Pe ∈ {1, 10} × Da ∈ {7.4, 74}`; irreversible: `Pe ∈ {1,5,10} × Da ∈ {74,296,740}`.
 
 ---
 
