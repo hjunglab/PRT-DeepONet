@@ -85,32 +85,6 @@ concentration: the concentration field).
 
 ---
 
-## Data layout
-
-The training-pipeline notebooks read every input from one root, `DATA_ROOT` (default `../../data`
-relative to a `models/` folder, or set the `PRT_DATA_ROOT` environment variable). Arrange your
-dataset as below; the load notebooks do **not** need this.
-
-```
-DATA_ROOT/
-├── velocity/
-│   ├── split.pt              fixed porosity-binned train/test split (seed 27) + base tensors
-│   ├── fields/               velocity ground truth,  v{idx}.npz
-│   ├── mis_map.npz           MIS map cache
-│   ├── mis_stats.npz         MIS z-score statistics
-│   └── pressure_stats.npz    (∂ₓP, ∂ᵧP) max-abs normalization statistics
-├── concentration/
-│   ├── irreversible/         A{dom}.npz (labels) + m{b}.npz (masks)
-│   └── monod/
-│       ├── masks/            m{dom}.npz
-│       └── trunk_cache/      pre-built trunk datasets + meta
-└── predicted_velocity.npz    predicted velocity (ux, uy) cache, λ=10  (shared by both concentration pipelines)
-```
-
-> The flow variant's pressure-component U-Net weights are loaded from the shipped
-> `flow/parameters/Pressure_component_UNet.pt`, so they are **not** part of `DATA_ROOT`.
-
----
 
 ## Grid & conventions
 
