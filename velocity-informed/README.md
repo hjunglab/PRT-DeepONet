@@ -45,10 +45,8 @@ and `examples/` (one example pore geometry per type).
   external data. *This is the notebook to run to reproduce a result.*
 - **`PRT-DeepONet_<TYPE>.ipynb` — training pipeline.** Documents the full pipeline
   (`Imports → Reproducibility & Paths → Model Definition → Data Loader → Training Utilities →
-  Evaluation → Main Entry`) and retrains from scratch. It reads the training dataset from a single
-  `DATA_ROOT` (see [Data layout](#data-layout)) and writes weights back into the variant's
-  `parameters/`.
-
+  Evaluation → Main Entry`) and retrains from scratch.
+  
 ---
 
 ## Quick start (reproduce a result)
