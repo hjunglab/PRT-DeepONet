@@ -1,0 +1,14 @@
+name: prt-deeponet
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - torch==2.6.0            # CUDA 12.4 build used for training (torch 2.6.0+cu124)
+      - numpy==2.0.1
+      - scipy==1.15.1
+      - matplotlib==3.10.0
+# Hardware: 2 × Intel Xeon Gold 6346 (3.10 GHz, 16 cores each),
+#           1 × NVIDIA RTX A6000 (48 GB), driver 550.144.03, CUDA 12.4; Ubuntu 22.04.
+# Training expects a GPU; evaluation and the figures run on CPU.
