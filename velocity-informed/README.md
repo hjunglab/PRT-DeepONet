@@ -1,6 +1,6 @@
 # PRT-DeepONet: velocity variant and concentration variant
 
-DeepONet surrogates for 2-D pore geometries (64 × 148). PRT-DeepONet is extended to predict the pore-scale velocity
+DeepONet surrogates for 2D pore geometries (64 × 148). PRT-DeepONet is extended to predict the pore-scale velocity
 field (**velocity variant**), and the predicted velocity is used to improve the concentration prediction: the
 **concentration variants** receive the velocity predicted by the velocity variant, and each is compared with the
 original PRT-DeepONet (geometry and GDF only).
