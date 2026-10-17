@@ -39,7 +39,7 @@ Each `make_all.sh` takes one stage:
 | stage | what it does |
 |---|---|
 | `figures` (default) | `4_figures/` from the shipped `data/` |
-| `extract` | if the LB simulation data are available (`PRT_LB`), recomputes `data/` with the released weights (`1_preprocess` → `3_extract` → `4_figures`) |
+| `extract` | preprocessing, evaluation using the released model weights, and regeneration of figure and table data (`1_preprocess` → `3_extract` → `4_figures`) |
 | `train` | `1_preprocess` → `2_train`: retrains the proposed models of the physics |
 | `all` | `train`, then `extract` with the newly trained weights (`WEIGHTS=$PRT_WORK/<physics>/weights`) |
 
