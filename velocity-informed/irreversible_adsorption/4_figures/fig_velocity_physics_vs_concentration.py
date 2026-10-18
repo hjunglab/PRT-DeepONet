@@ -17,7 +17,7 @@ sel = (P["series"] == "lam10") & (P["seed"] == 42) & (((P["idx"] - 1) // common.
 pb = ((P["idx"][sel] - 1) % common.N_BASE + 1).astype(int)
 bases = sorted(set(pb))
 Y = {s: np.array([M["rmse"][(M["model"] == "variant") & (M["seed"] == s) & (M["base"] == b)].mean() for b in bases]) for s in SEEDS}
-MET = [("flux_cov", "Sectional flux coefficient (std/mean)"), ("flux_ratio", "Sectional flux ratio (max/min)"),
+MET = [("flux_cov", "Sectional flux variation (std/mean)"), ("flux_ratio", "Sectional flux ratio (max/min)"),
        ("io_err", "Inlet-outlet flux error"), ("wallnorm", "Near-wall normal velocity"),
        ("div", "Velocity divergence"), ("nrmse_mag", "Velocity NRMSE")]
 fig, axs = plt.subplots(2, 3, figsize=(17, 9)); axs = axs.ravel()
