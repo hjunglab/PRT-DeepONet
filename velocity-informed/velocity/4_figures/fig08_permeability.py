@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Supplementary figure. Darcy permeability k = nu q L / dP from the predicted vs the LB velocity, test set,
+"""Supplementary figure. Darcy permeability kappa = nu q L / dP from the predicted vs the LB velocity, test set,
 5 training seeds (log-log, coloured by Re, 1:1 line, R^2 per seed)."""
 import os, sys
 import numpy as np
@@ -23,7 +23,7 @@ for k, s in enumerate(SEEDS):
     a.grid(True, which="both", ls=":", alpha=0.35); a.set_title(f"seed {s}", fontsize=12)
     a.text(0.05, 0.95, f"$R^2$={r2(klb, kp):.3f}", transform=a.transAxes, va="top", ha="left", fontsize=10,
            bbox=dict(boxstyle="round", fc="white", ec="0.5", alpha=0.95))
-    a.set_xlabel("$k_{LB}$"); a.set_ylabel("$k_{pred}$")
+    a.set_xlabel(r"$\kappa_{LB}$"); a.set_ylabel(r"$\kappa_{pred}$")
     print(f"seed {s}: R2 = {r2(klb, kp):.4f}")
 axs[5].axis("off")
 fig.colorbar(sc, ax=axs[:5].tolist(), fraction=0.02, pad=0.02).set_label("Reynolds $Re$ (log)")
