@@ -16,16 +16,16 @@ LABEL = {"flux_cov": "Sectional flux variation (std/mean)", "flux_ratio": "Secti
 fin = lambda a: a[np.isfinite(a)]
 rows = [["Metric", "LB"] + [lab for _, lab in SERIES]]
 for k, lab in LABEL.items():
-    lb = f"{np.median(fin(P[k][P['series'] == 'LB'])):.3g}"
+    lb = f"{np.median(fin(P[k][P['series'] == 'LB'])):.4f}"
     row = [lab, lb]
     for tag, _ in SERIES:
         m, s = mean_std([np.median(fin(P[k][(P["series"] == tag) & (P["seed"] == sd)])) for sd in SEEDS])
-        row.append(f"{m:.3g}±{s:.2g}")
+        row.append(f"{m:.4f}±{s:.4f}")
     rows.append(row)
 row = ["Velocity NRMSE", "-"]
 for tag, _ in SERIES:
     m, s = mean_std([P["nrmse_mag"][(P["series"] == tag) & (P["seed"] == sd)].mean() for sd in SEEDS])
-    row.append(f"{m:.3g}±{s:.2g}")
+    row.append(f"{m:.4f}±{s:.4f}")
 rows.append(row)
 table_png(rows, "Physics-based diagnostics of the predicted velocity (validation set, P50, 5-seed mean±std)", OUT,
           "table4_physics_diagnostics", highlight_col=3)
