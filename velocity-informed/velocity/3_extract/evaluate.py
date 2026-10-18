@@ -25,7 +25,7 @@ WDIR = os.environ.get("WEIGHTS", common.weights_dir("velocity"))
 OUT = os.path.join(common.work_dir("velocity"), "eval"); os.makedirs(OUT, exist_ok=True)
 SPLIT = os.environ.get("SPLIT", "test")
 names = sys.argv[1:] or (sorted(os.path.basename(p)[:-3] for p in
-                                glob.glob(f"{WDIR}/velocity_*.pt") + glob.glob(f"{WDIR}/ablation/*/velocity_*.pt"))
+                                glob.glob(f"{WDIR}/velocity_*.pt") + glob.glob(f"{WDIR}/configuration/*/velocity_*.pt"))
                          + ([f"vanilla_deeponet_seed{s}" for s in common.SEEDS] if SPLIT == "test" else []))
 dev = common.device()
 VI = VelocityInputs(dev=dev)
@@ -47,7 +47,7 @@ def divergence(ux, uy, pore, sd):
 
 def find(name):
     for p in [f"{WDIR}/{name}.pt", common.baseline_weights("velocity", name)] \
-            + glob.glob(f"{WDIR}/ablation/*/{name}.pt"):
+            + glob.glob(f"{WDIR}/configuration/*/{name}.pt"):
         if os.path.exists(p):
             return p
     raise FileNotFoundError(name)

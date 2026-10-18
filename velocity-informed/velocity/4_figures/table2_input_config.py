@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Table 2. Velocity input-configuration ablation C0-C7 on the validation samples (900): NRMSE of |u| at the 25th / 50th /
+"""Table 2. Velocity input configuration C0-C7 on the validation samples (900): NRMSE of |u| at the 25th / 50th /
 75th / 90th percentile and the worst sample, 10-seed mean +/- std. C0 = vanilla DeepONet
 (data/baseline_val_metrics.csv); C1-C7 = configurations trained without the divergence penalty (data/input_configuration.csv;
 C5 is the adopted input set)."""

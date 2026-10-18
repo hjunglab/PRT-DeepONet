@@ -208,15 +208,15 @@ Evaluation metrics:
 * **Velocity**: NRMSE over the pore cells, RMSE / (max − min) of the LB field of the sample.
 * **Concentration**: RMSE over the pore cells.
 
-Training seeds: 42, 2, 3, 4, 5 for every model, proposed and baseline (released weights). The input-configuration
-ablation of the velocity (Table 2) uses 10 seeds (42, 2–10), including its C0 row (vanilla DeepONet); its validation
+Training seeds: 42, 2, 3, 4, 5 for every model, proposed and baseline (released weights). The input
+configuration of the velocity (Table 2) uses 10 seeds (42, 2–10), including its C0 row (vanilla DeepONet); its validation
 metrics are shipped as data (`velocity/data/input_configuration.csv`, `baseline_val_metrics.csv`).
 
 | folder | file | seeds |
 |---|---|---|
 | `velocity/weights/` | `pressure_unet.pt` | 42 |
 | | `velocity_variant_seed<s>.pt` (λ = 10) | 42, 2, 3, 4, 5 |
-| | `ablation/lambda/velocity_variant_lam<λ>_seed<s>.pt` (λ = 0, 1, 3, 5, 30, 100, 300, 500) | 42, 2, 3, 4, 5 |
+| | `configuration/lambda/velocity_variant_lam<λ>_seed<s>.pt` (λ = 0, 1, 3, 5, 30, 100, 300, 500) | 42, 2, 3, 4, 5 |
 | | `baseline/vanilla_deeponet_seed<s>.pt` | 42, 2, 3, 4, 5 |
 | `irreversible_adsorption/weights/` | `adsorption_variant_seed<s>.pt`, `baseline/adsorption_original_seed<s>.pt` | 42, 2, 3, 4, 5 |
 | `monod/weights/` | `monod_variant_seed<s>.pt`, `baseline/monod_original_seed<s>.pt` | 42, 2, 3, 4, 5 |
@@ -250,8 +250,8 @@ time of the released models on the machine it runs on, so its results depend on 
 |---|---|---|---|
 | `table_input_config.py` | Table 6: input configurations C0–C10 (5 seeds) | validation | `input_configuration.csv` |
 | `table7_timing.py` | Table 7: wall-clock time, LB vs concentration variant, and training time (adsorption and Monod) | – | `timing.csv`, `../monod/data/timing.csv` |
-| `table_lambda.py` | Table S1: λ of the velocity variant supplying the velocity (5 seeds) | validation | `ablation_lambda.csv` |
-| `table_velocity_input.py` | Table S2: velocity input (matched / mismatched Re, predicted / LB, vector / magnitude; 5 seeds) | validation | `ablation_velocity_input.csv` |
+| `table_lambda.py` | Table S1: λ of the velocity variant supplying the velocity (5 seeds) | validation | `configuration_lambda.csv` |
+| `table_velocity_input.py` | Table S2: velocity input (matched / mismatched Re, predicted / LB, vector / magnitude; 5 seeds) | validation | `configuration_velocity_input.csv` |
 | `fig_worst_and_histogram.py` | Figure 9: worst sample of the original model + RMSE distributions | test | `fields_worst.npz`, `test_metrics.csv`, `baseline_test_metrics.csv` |
 | `fig_peda_heatmap.py` | Figure 10: mean RMSE over the 9 (Pe, Da) conditions (5 seeds) | test | `test_metrics.csv`, `baseline_test_metrics.csv` |
 | `fig_unseen_peda.py` | Figure 12: unseen (Pe, Da) conditions | test | `fields_unseen.npz`, `test_metrics.csv`, `unseen_metrics.csv`, `baseline_unseen_metrics.csv` |

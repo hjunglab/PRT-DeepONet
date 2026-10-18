@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Velocity input of the concentration variant (irreversible adsorption): validation pore RMSE at the 25th / 50th / 75th / 90th
-percentile and the worst sample, 5-seed mean +/- std (data/ablation_velocity_input.csv).
+percentile and the worst sample, 5-seed mean +/- std (data/configuration_velocity_input.csv).
 matched     : velocity at the highest Re of the geometry for every Pe (adopted)
 mismatched  : velocity at the Re group paired with each Pe (Pe 1, 5, 10 -> low, middle, high Re)
 LB          : LB velocity instead of the predicted velocity;  magnitude : |u| (1 channel) instead of (u_x, u_y)"""
@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 from common import paths, read_csv, mean_std, table_png
 
 DATA, OUT = paths("irreversible_adsorption")
-A = read_csv(f"{DATA}/ablation_velocity_input.csv")
+A = read_csv(f"{DATA}/configuration_velocity_input.csv")
 SPEC = [("matched_predicted", "Matched predicted velocity"), ("mismatched_predicted", "Mismatched predicted velocity"),
         ("matched_lb", "Matched LB velocity"), ("predicted_magnitude", "Predicted velocity magnitude"),
         ("lb_magnitude", "LB velocity magnitude")]

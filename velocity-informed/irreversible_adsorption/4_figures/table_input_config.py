@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Concentration input-configuration ablation C0-C10 (irreversible adsorption): validation pore RMSE (2700 samples) at the 25th / 50th / 75th /
+"""Concentration input configuration C0-C10 (irreversible adsorption): validation pore RMSE (2700 samples) at the 25th / 50th / 75th /
 90th percentile and the worst sample, 5-seed mean +/- std (data/input_configuration.csv). C0 = original PRT-DeepONet;
 C8 = predicted velocity (u_x, u_y; velocity variant, lambda = 10, highest Re of the geometry) in the CNN branch
 (adopted); C9 = in the trunk; C10 = C8 with the predicted velocity vectors randomly permuted

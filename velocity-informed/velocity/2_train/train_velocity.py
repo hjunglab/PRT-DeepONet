@@ -12,7 +12,7 @@
 Inputs : velocity/lb_data/flow_conditions.npz, $PRT_WORK/velocity/geometry_features.npz (1_preprocess/), the
          pressure U-Net (velocity/weights/pressure_unet.pt, or PRESSURE_UNET=<path>), LB velocity labels.
 Output : $PRT_WORK/velocity/weights/velocity_variant_seed<S>.pt (lambda = 10) or
-         $PRT_WORK/velocity/weights/ablation/lambda/velocity_variant_lam<L>_seed<S>.pt  (+ .json training log)
+         $PRT_WORK/velocity/weights/configuration/lambda/velocity_variant_lam<L>_seed<S>.pt  (+ .json training log)
 Run    : python train_velocity.py        |   LAMBDA=0 SEED=2 python train_velocity.py
          SMOKE=1 for a 2-epoch check on a subset.
 """
@@ -32,7 +32,7 @@ outdir = os.path.join(common.work_dir("velocity"), "weights")
 if LAM == 10:
     name = f"velocity_variant_seed{SEED}"
 else:
-    name = f"velocity_variant_lam{LAM:g}_seed{SEED}"; outdir = os.path.join(outdir, "ablation", "lambda")
+    name = f"velocity_variant_lam{LAM:g}_seed{SEED}"; outdir = os.path.join(outdir, "configuration", "lambda")
 os.makedirs(outdir, exist_ok=True)
 print(f"[{name}] device={dev}", flush=True)
 
