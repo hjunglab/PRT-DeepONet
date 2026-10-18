@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Table 2. Velocity input-configuration ablation C0-C7 on the validation samples (900): NRMSE of |u| at the 25th / 50th /
 75th / 90th percentile and the worst sample, 10-seed mean +/- std. C0 = vanilla DeepONet
-(data/baseline_val_metrics.csv); C1-C7 = configurations trained without the divergence penalty (data/ablation_input_config.csv;
+(data/baseline_val_metrics.csv); C1-C7 = configurations trained without the divergence penalty (data/input_configuration.csv;
 C5 is the adopted input set)."""
 import numpy as np
 import os, sys
@@ -9,7 +9,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 from common import paths, read_csv, mean_std, table_png
 
 DATA, OUT = paths("velocity")
-A = read_csv(f"{DATA}/ablation_input_config.csv")
+A = read_csv(f"{DATA}/input_configuration.csv")
 V = read_csv(f"{DATA}/baseline_val_metrics.csv"); O = V["model"] == "vanilla"
 C0 = {k: [f(V["nrmse_mag"][O & (V["seed"] == s)]) for s in sorted(set(V["seed"][O]))]
       for k, f in [("p25", lambda a: np.percentile(a, 25)), ("p50", np.median), ("p75", lambda a: np.percentile(a, 75)),

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Concentration input-configuration ablation C0-C10 (irreversible adsorption): validation pore RMSE (2700 samples) at the 25th / 50th / 75th /
-90th percentile and the worst sample, 5-seed mean +/- std (data/ablation_input_config.csv). C0 = original PRT-DeepONet;
+90th percentile and the worst sample, 5-seed mean +/- std (data/input_configuration.csv). C0 = original PRT-DeepONet;
 C8 = predicted velocity (u_x, u_y; velocity variant, lambda = 10, highest Re of the geometry) in the CNN branch
 (adopted); C9 = in the trunk; C10 = C8 with the predicted velocity vectors randomly permuted
 over the pore cells of each geometry (u_x^sh, u_y^sh)."""
@@ -9,7 +9,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 from common import paths, read_csv, mean_std, table_png
 
 DATA, OUT = paths("irreversible_adsorption")
-A = read_csv(f"{DATA}/ablation_input_config.csv")
+A = read_csv(f"{DATA}/input_configuration.csv")
 G = "dP/dx, dP/dy"
 SPEC = [("C0", "wg", "x, GDF"), ("C1", "wg", f"x, GDF, {G}"), ("C2", "wg", f"x, GDF, UPRM^2, {G}"),
         ("C3", "wg, UPRM", f"x, GDF, UPRM^2, {G}"), ("C4", "wg, UPRM", f"x, GDF, d_w^2, {G}"),

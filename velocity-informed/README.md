@@ -210,7 +210,7 @@ Evaluation metrics:
 
 Training seeds: 42, 2, 3, 4, 5 for every model, proposed and baseline (released weights). The input-configuration
 ablation of the velocity (Table 2) uses 10 seeds (42, 2–10), including its C0 row (vanilla DeepONet); its validation
-metrics are shipped as data (`velocity/data/ablation_input_config.csv`, `baseline_val_metrics.csv`).
+metrics are shipped as data (`velocity/data/input_configuration.csv`, `baseline_val_metrics.csv`).
 
 | folder | file | seeds |
 |---|---|---|
@@ -234,7 +234,7 @@ time of the released models on the machine it runs on, so its results depend on 
 
 | script | content | set | data |
 |---|---|---|---|
-| `table2_input_config.py` | Table 2: input configurations C0–C7 (10 seeds) | validation | `baseline_val_metrics.csv` (C0), `ablation_input_config.csv` |
+| `table2_input_config.py` | Table 2: input configurations C0–C7 (10 seeds) | validation | `baseline_val_metrics.csv` (C0), `input_configuration.csv` |
 | `table3_lambda_sweep.py` | Table 3: λ = 0–500 (5 seeds) | validation | `val_metrics.csv` |
 | `table4_physics_diagnostics.py` | Table 4: physical consistency, LB and λ = 0, 10, 100 (5 seeds) | validation | `physics_diagnostics_val.csv` |
 | `table5_timing.py` | Table 5: wall-clock time, LB vs velocity variant, and training time | – | `timing.csv` |
@@ -248,7 +248,7 @@ time of the released models on the machine it runs on, so its results depend on 
 
 | script | content | set | data |
 |---|---|---|---|
-| `table_input_config.py` | Table 6: input configurations C0–C10 (5 seeds) | validation | `ablation_input_config.csv` |
+| `table_input_config.py` | Table 6: input configurations C0–C10 (5 seeds) | validation | `input_configuration.csv` |
 | `table7_timing.py` | Table 7: wall-clock time, LB vs concentration variant, and training time (adsorption and Monod) | – | `timing.csv`, `../monod/data/timing.csv` |
 | `table_lambda.py` | Table S1: λ of the velocity variant supplying the velocity (5 seeds) | validation | `ablation_lambda.csv` |
 | `table_velocity_input.py` | Table S2: velocity input (matched / mismatched Re, predicted / LB, vector / magnitude; 5 seeds) | validation | `ablation_velocity_input.csv` |

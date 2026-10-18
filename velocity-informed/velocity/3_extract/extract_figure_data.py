@@ -10,7 +10,7 @@ Reads $PRT_WORK/velocity/eval/ (evaluate.py, interpolation_unseen_re.py) and the
     fields_unseen_re.npz   velocity fields of the 70th/80th/90th-percentile unseen-Re cases (seed 42)
     baseline_test_metrics.csv  the test_metrics.csv columns for the vanilla DeepONet (comparison baseline, 5 seeds)
 baseline_val_metrics.csv (vanilla DeepONet = input configuration C0 of Table 2, 10 seeds like C1-C7) is shipped as it is,
-like ablation_input_config.csv, and not rewritten here.
+like input_configuration.csv, and not rewritten here.
 Seed 42 is also the seed whose mean test NRMSE of |u| is closest to the 5-seed mean.
 """
 import os, sys, csv, glob
