@@ -199,7 +199,7 @@ Every physics runs the same stages (`<physics>/make_all.sh`, Section 1):
 ## 5. Training, evaluation, weights and seeds
 
 Proposed models: AdamW (lr 1e-3), batch 25, mixed precision, early stopping on the validation loss (patience 15; the
-weights with the lowest validation loss are kept), at most 1000 epochs (Monod: 500). The pressure U-Net: full-image
+weights with the lowest validation loss are kept), at most 1000 epochs. The pressure U-Net: full-image
 MSE, batch 16, at most 300 epochs, patience 20. The test geometries are never used during training or model
 selection.
 
