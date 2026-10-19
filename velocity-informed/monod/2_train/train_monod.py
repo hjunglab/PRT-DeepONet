@@ -19,7 +19,7 @@ from monod.core import ConcentrationVariant, MonodInputs, load_samples, targets
 
 SEED = int(os.environ.get("SEED", "42"))
 SMOKE = os.environ.get("SMOKE") == "1"
-EPOCHS, PAT = (3, 2) if SMOKE else (500, 15)
+EPOCHS, PAT = (3, 2) if SMOKE else (1000, 15)
 dev = common.device(); torch.backends.cudnn.benchmark = False; torch.backends.cudnn.deterministic = True
 MI = MonodInputs()
 Str, Sva = load_samples("train"), load_samples("val")
