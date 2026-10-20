@@ -20,7 +20,7 @@ for k, s in enumerate(SEEDS):
     a.plot([lo, hi], [lo, hi], "k--", lw=1.1, zorder=1)
     sc = a.scatter(klb, kp, c=re, cmap="viridis", norm=norm, s=14, alpha=0.85, edgecolors="none", zorder=2)
     a.set_xscale("log"); a.set_yscale("log"); a.set_xlim(lo, hi); a.set_ylim(lo, hi); a.set_aspect("equal", "box")
-    a.grid(True, which="both", ls=":", alpha=0.35); a.set_title(f"seed {s}", fontsize=12)
+    a.grid(True, which="both", ls=":", alpha=0.35); a.set_title(f"({'abcde'[k]})", fontsize=12)
     a.text(0.05, 0.95, f"$R^2$={r2(klb, kp):.3f}", transform=a.transAxes, va="top", ha="left", fontsize=10,
            bbox=dict(boxstyle="round", fc="white", ec="0.5", alpha=0.95))
     a.set_xlabel(r"$\kappa_{LB}$"); a.set_ylabel(r"$\kappa_{pred}$")
